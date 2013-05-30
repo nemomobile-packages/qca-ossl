@@ -1,0 +1,21 @@
+Name: qca-ossl
+Summary: OpenSSL plugin for the Qt Cryptographic Architecture v2
+Version: 2.0.0
+Release: beta3
+Group: System/Libraries
+License: LGPLv2
+URL: http://delta.affinix.com/qca/
+Sources:
+    - "%{name}-%{version}.tar.bz2"
+Description:  
+ This plugin provides support for TLS, CMS, X.509, RSA, DSA, Diffie-Hellman, PKCS#7, PKCS#12, SHA0, SHA1, SHA224, SHA256, SHA384, SHA512, MD2, MD4, MD5, RIPEMD160, Blowfish, DES, 3DES, AES128, AES192, AES256, CAST5, HMAC(SHA1, MD5, RIPEMD160), PBKDF1(MD2, SHA1), PBKDF2(SHA1).
+
+PkgConfigBR:
+    - QtCore < 5
+    - qca2
+    - openssl
+SetupOptions: -q -n %{name}-%{version}/%{name}
+Configure: none
+Builder: make 
+Files:
+    - "/usr/lib/qt4/plugins/crypto/libqca-ossl.so"
